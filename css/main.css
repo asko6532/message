@@ -15,10 +15,10 @@ main,
 section,
 aside,
 footer {
-  border: solid 1px white;
-  border-radius: 10px;
+  box-shadow: 5px 5px black;
+  border-radius: 5px;
   position: relative;
-  min-height: 200px;
+  min-height: 100px;
 }
 header::after,
 nav::after,
@@ -65,30 +65,26 @@ main::after {
   content: "main";
 }
 
-aside {
-  background: var(--aside-bg);
-}
-aside::after {
-  content: "aside";
+/*aside {
+	background: var(--aside-bg);
+	&::after {content: "aside";}
 }
 
 footer {
-  background: var(--footer-bg);
-}
-footer::after {
-  content: "footer";
-}
-
+	display: none;
+	background: var(--footer-bg);
+	&::after {content: "footer";}
+}*/
 body {
   margin: 40px;
 }
 
 .site {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(5, 1fr);
-  grid-gap: 1em 1em;
-  grid-template-areas: "title title" "navigation navigation" "copy sidebar" "copy foots";
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 4fr;
+  grid-gap: 8em 0em;
+  grid-template-areas: "title title" "copy copy";
 }
 
 @media screen and (max-width: 500px) {

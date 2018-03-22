@@ -4,22 +4,21 @@ main,
 section,
 aside,
 footer {
-  border: solid 1px white;
-  border-radius: 10px;
+box-shadow: 5px 5px black;
+  border-radius: 5px;
   position: relative;
-  min-height: 200px;
+  min-height: 100px;
 
  &::after {
  	@include info;
  }
 }
- // h1 {
- // 	@include info;
- // } 
+  h1 {
+  	//@include info;
+  } 
 
 body {
 	background: var(--page-bg);
-	// background: $bg_color;
 }
 
 header {
@@ -34,18 +33,18 @@ nav {
 
 main {
 	background: var(--main-bg);
-	//grid-column: 1/4;
 	//grid-row: 3/4;
 	grid-area: copy;
 	&::after {content: "main";}
 }
 
-aside {
+/*aside {
 	background: var(--aside-bg);
 	&::after {content: "aside";}
 }
 
 footer {
+	display: none;
 	background: var(--footer-bg);
 	&::after {content: "footer";}
-}
+}*/
