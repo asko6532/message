@@ -1,0 +1,51 @@
+header,
+nav,
+main,
+section,
+aside,
+footer {
+  border: solid 1px white;
+  border-radius: 10px;
+  position: relative;
+  min-height: 200px;
+
+ &::after {
+ 	@include info;
+ }
+}
+ // h1 {
+ // 	@include info;
+ // } 
+
+body {
+	background: var(--page-bg);
+	// background: $bg_color;
+}
+
+header {
+	background: var(--header-bg);
+	&::after {content: "header";}
+}
+
+nav {
+	background: var(--nav-bg);
+	&::after {content: "navigation";}
+}
+
+main {
+	background: var(--main-bg);
+	//grid-column: 1/4;
+	//grid-row: 3/4;
+	grid-area: copy;
+	&::after {content: "main";}
+}
+
+aside {
+	background: var(--aside-bg);
+	&::after {content: "aside";}
+}
+
+footer {
+	background: var(--footer-bg);
+	&::after {content: "footer";}
+}

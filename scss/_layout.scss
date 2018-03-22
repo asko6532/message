@@ -1,0 +1,30 @@
+body {
+	margin: 40px;
+}
+
+.site {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	//grid-template-rows: 2fr 1fr 4fr;
+	//grid-template-columns: minmax(10em, 20em) 1fr;
+	grid-template-rows: repeat(5, 1fr);
+	grid-gap: 1em 1em;
+
+	
+	grid-template-areas:
+	"title title"
+	"navigation navigation"
+	"copy sidebar"
+	"copy foots"
+}
+
+@media screen and (max-width: 500px) {
+	.site {
+		grid-template-areas:
+		"title title"
+		"copy copy"
+		"sidebar sidebar"
+		"foots foots"
+		"navivation navigation"
+	}
+}

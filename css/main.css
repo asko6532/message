@@ -1,0 +1,98 @@
+:root {
+  --page-bg: #F2FFE1;
+  --header-bg: #6ADCDD;
+  --nav-bg: #A8E8CD;
+  --main-bg: #F0A007;
+  --aside-bg: #D94546;
+  --footer-bg: #D482E8;
+  --info-bg: black;
+  --info-txt: white;
+}
+
+header,
+nav,
+main,
+section,
+aside,
+footer {
+  border: solid 1px white;
+  border-radius: 10px;
+  position: relative;
+  min-height: 200px;
+}
+header::after,
+nav::after,
+main::after,
+section::after,
+aside::after,
+footer::after {
+  display: block;
+  position: absolute;
+  font-family: "Input Mono", "Courier New", Courier, monospace;
+  background: var(--info-bg);
+  color: var(--info-txt);
+  top: 1em;
+  left: 1em;
+  height: 1.25em;
+  width: auto;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+}
+
+body {
+  background: var(--page-bg);
+}
+
+header {
+  background: var(--header-bg);
+}
+header::after {
+  content: "header";
+}
+
+nav {
+  background: var(--nav-bg);
+}
+nav::after {
+  content: "navigation";
+}
+
+main {
+  background: var(--main-bg);
+  grid-area: copy;
+}
+main::after {
+  content: "main";
+}
+
+aside {
+  background: var(--aside-bg);
+}
+aside::after {
+  content: "aside";
+}
+
+footer {
+  background: var(--footer-bg);
+}
+footer::after {
+  content: "footer";
+}
+
+body {
+  margin: 40px;
+}
+
+.site {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 1em 1em;
+  grid-template-areas: "title title" "navigation navigation" "copy sidebar" "copy foots";
+}
+
+@media screen and (max-width: 500px) {
+  .site {
+    grid-template-areas: "title title" "copy copy" "sidebar sidebar" "foots foots" "navivation navigation";
+  }
+}
