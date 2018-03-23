@@ -8,6 +8,7 @@ box-shadow: 5px 5px black;
   border-radius: 5px;
   position: relative;
   min-height: 100px;
+  font-family: 'Fredoka One', cursive;
 
  &::after {
  	@include info;
@@ -23,27 +24,26 @@ body {
 
 header {
 	background: var(--header-bg);
-	&::after {content: "header";}
+	//&::after {content: "header";}
 }
 
 nav {
 	background: var(--nav-bg);
-	&::after {content: "navigation";}
+	//&::after {content: "navigation";}
 }
 
 main {
 	background: var(--main-bg);
 	//grid-row: 3/4;
 	grid-area: copy;
-	&::after {content: "main";}
+	//&::after {content: "main";}
 }
 
-/*aside {
+aside {
 	background: var(--aside-bg);
-	&::after {content: "aside";}
+	//&::after {content: "aside";}
 }
-
-footer {
+/*footer {
 	display: none;
 	background: var(--footer-bg);
 	&::after {content: "footer";}
