@@ -9,6 +9,8 @@ box-shadow: 5px 5px black;
   position: relative;
   min-height: 100px;
   font-family: 'Fredoka One', cursive;
+  color: white;
+  text-shadow: 3px 3px black;
 
  &::after {
  	@include info;
@@ -23,28 +25,55 @@ body {
 }
 
 header {
-	background: var(--header-bg);
-	//&::after {content: "header";}
+	padding: 5%;
+	text-align: center;
 }
 
-nav {
-	background: var(--nav-bg);
-	//&::after {content: "navigation";}
+	@keyframes animatedBackground {
+		from {background-position: 0 0;}
+		to {background-position: 100% 0;}
+	}
+
+	@keyframes animatedBackground-hover {
+		from {background-position: 100% 0;}
+		to {background-position: 0 0;}
+	}
+
+	#animate-area {
+		background-image: url(../orange.svg);
+		background-position: 0px 0px;
+		background-repeat: repeat-x;
+
+		animation: animatedBackground 30s linear infinite;
+	}
+
+	#animate-area:hover {
+		background-image: url(../orange.svg);
+		background-position: 0px 0px;
+		background-repeat: repeat-x;
+
+		animation: animatedBackground-hover 30s linear infinite;
+	}
+
+#dont {
+	align-self: flex-end;
 }
 
 main {
 	background: var(--main-bg);
-	//grid-row: 3/4;
 	grid-area: copy;
-	//&::after {content: "main";}
+	font-size: 150%;
+	display: flex;
+	padding-left: 2%;
+	padding-right: 2%;
+	flex-direction: column;
+	justify-content: space-between;
 }
+
 
 aside {
 	background: var(--aside-bg);
-	//&::after {content: "aside";}
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
-/*footer {
-	display: none;
-	background: var(--footer-bg);
-	&::after {content: "footer";}
-}*/
